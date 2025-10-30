@@ -128,20 +128,29 @@ const Dashboard = () => {
             </div>
 
             {/* View Mode Tabs */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-accent flex items-center gap-2">
-                <Cpu className="h-4 w-4" />
+            <div className="space-y-2 min-w-[200px]">
+              <label className="text-sm font-medium text-foreground flex items-center gap-2">
+                <Cpu className="h-4 w-4 text-accent" />
                 View Mode
               </label>
               <Tabs value={viewMode} onValueChange={setViewMode} className="w-full">
-                <TabsList className="grid grid-cols-3 bg-muted/50">
-                  <TabsTrigger value="daily" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                <TabsList className="grid grid-cols-3 w-full bg-background/50 p-1 border border-primary/30">
+                  <TabsTrigger 
+                    value="daily"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                  >
                     Daily
                   </TabsTrigger>
-                  <TabsTrigger value="monthly" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <TabsTrigger 
+                    value="monthly"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                  >
                     Monthly
                   </TabsTrigger>
-                  <TabsTrigger value="yearly" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+                  <TabsTrigger 
+                    value="yearly"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                  >
                     Yearly
                   </TabsTrigger>
                 </TabsList>
