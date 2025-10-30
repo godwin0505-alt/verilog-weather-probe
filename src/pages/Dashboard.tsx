@@ -133,23 +133,26 @@ const Dashboard = () => {
                 <Cpu className="h-4 w-4 text-accent" />
                 View Mode
               </label>
-              <Tabs value={viewMode} onValueChange={setViewMode} className="w-full">
+              <Tabs value={viewMode} onValueChange={(value) => {
+                console.log("Tab changing to:", value);
+                setViewMode(value);
+              }} className="w-full">
                 <TabsList className="grid grid-cols-3 w-full bg-background/50 p-1 border border-primary/30">
                   <TabsTrigger 
                     value="daily"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground hover:bg-primary/20 cursor-pointer"
                   >
                     Daily
                   </TabsTrigger>
                   <TabsTrigger 
                     value="monthly"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground hover:bg-primary/20 cursor-pointer"
                   >
                     Monthly
                   </TabsTrigger>
                   <TabsTrigger 
                     value="yearly"
-                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all"
+                    className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground hover:bg-primary/20 cursor-pointer"
                   >
                     Yearly
                   </TabsTrigger>
